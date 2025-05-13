@@ -1,16 +1,15 @@
 footer {
     background-color: #cfb39d;
     position: fixed;
-    bottom: 0.5%;
     text-align: center;
     align-items: center;
     left: 50%;
+    bottom: 0%;
     transform: translateX(-50%);
     padding: 1rem 1.5rem;
     z-index: 1000;
-    border-radius: 10px;
     display: inline-block;
-    width: 95%;
+    width: 100%;
 }
 
 #EHRights {

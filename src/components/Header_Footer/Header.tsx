@@ -1,17 +1,29 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import "./headerStyle.css";
 
 interface HeaderProps {
   onLoginClick: () => void;
+  isLoggedIn: boolean;
+  onLogout: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({onLoginClick}) => {
+const Header: React.FC<HeaderProps> = ({ onLoginClick, isLoggedIn, onLogout }) => {
   return (
     <header>
       <nav>
-        <a id="EHTitle" href="index.html">EducationHub</a>
+        <div id="EHTitle">EducationHub</div>
         <ul>
-          <li><a onClick={onLoginClick}>Login/Sign Up</a></li>
+          {!isLoggedIn ? (
+            <li><a onClick={onLoginClick} href="#">Login</a></li>
+          ) : (
+            <>
+              <li><Link to="/dashboard">Dashboard</Link></li>
+              <li><Link to="/sessions">Sessions</Link></li>
+              <li><Link to="/profile">Profile</Link></li>
+              <li><a onClick={onLogout} href="#">Logout</a></li>
+            </>
+          )}
         </ul>
       </nav>
     </header>

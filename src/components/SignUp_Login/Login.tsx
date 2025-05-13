@@ -1,16 +1,23 @@
 import React from 'react';
 import './loginStyle.css';
+import { useNavigate } from 'react-router-dom';
 
 interface LoginProps {
   onClose: () => void;
   onSignup: () => void;
+  onLoginSuccess: () => void;
 }
 
-const Login: React.FC<LoginProps> = ({ onClose, onSignup }) => {
+const Login: React.FC<LoginProps> = ({ onClose, onSignup, onLoginSuccess }) => {
+  const navigate = useNavigate();
 
+  
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log('Login submitted');
+    onLoginSuccess();
+    onClose();
+    navigate('/dashboard');
     // handle actual login logic here
   };
 

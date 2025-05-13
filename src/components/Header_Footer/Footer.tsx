@@ -4,7 +4,7 @@ import "./footerStyle.css";
 const Footer: React.FC = () => {
   return (
     <footer>
-        <a id="EHRights">EducationHub all right reserved.</a>
+        <a id="EHRights">@EducationHub all right reserved.</a>
     </footer>
   );
 };

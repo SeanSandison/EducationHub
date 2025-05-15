@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import ProfileHeader from './profile_components/ProfileHeader';
-import Info from './profile_components/Info';
-import UpdateInfo from './profile_components/UpdateInfo';
-import Payment from './profile_components/Payment';
-import Advanced from './profile_components/Advanced';
-import './Profile.css';
+import ProfileHeader from './ProfileHeader';
+import Info from './Info/Info';
+import UpdateInfo from './Update/UpdateInfo';
+import Payment from './Payment/Payment';
+import Advanced from './Advanced/Advanced';
+import './ProfileStyle.css';
 
 const Profile: React.FC = () => {
   const [showInfo, setShowInfo] = useState(true);

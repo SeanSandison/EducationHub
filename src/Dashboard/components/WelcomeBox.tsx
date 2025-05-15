@@ -1,5 +1,5 @@
 import React from 'react';
-import './welcomebox.css';
+import './WelcomeBoxStyle.css'
 
 const WelcomeBox: React.FC = () => {
   return (

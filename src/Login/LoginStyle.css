@@ -1,11 +1,5 @@
-/* Page Styling */
-html {
-    font-family: monospace;
-    background-color: #E6DCBF;
-}
-
-/* SignUp Styling */
-.signup-box {
+/* Login Styling */
+.login-box {
     background-color: #D0BBAB;
     padding: 2rem;
     border-radius: 12px;
@@ -18,23 +12,23 @@ html {
     transform: translate(-50%, -50%);
 }
 
-.signup-box h2 {
+.login-box h2 {
     text-align: center;
     margin-bottom: 1rem;
     color: white;
 }
 
-.signup-box form {
+.login-box form {
     display: flex;
     flex-direction: column;
 }
 
-.signup-box label {
+.login-box label {
     margin-top: 10px;
     color: white;
 }
 
-.signup-box input {
+.login-box input {
     padding: 8px;
     margin-top: 5px;
     border-radius: 5px;
@@ -44,7 +38,7 @@ html {
     color: black;
 }
 
-.signup-box button {
+.login-box button {
     margin-top: 20px;
     padding: 10px;
     background-color: #555;
@@ -55,12 +49,13 @@ html {
     transition: background-color 0.3s;
 }
 
-.signup-box button:hover {
+.login-box button:hover {
     background-color: #333;
 }
 
-.signup-box a {
+.login-box a {
     text-decoration: none;
+    align-items: middle;
 }
 
 .close-btn {
@@ -72,17 +67,4 @@ html {
     color: white;
     cursor: pointer;
     user-select: none;
-}
-
-#actType {
-    margin-top: 10px;
-    border-width: 0;
-}
-
-#actTypeTitle {
-    color: #fff;
-}
-
-.login {
-    color: blue;
 }

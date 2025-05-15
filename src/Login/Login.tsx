@@ -1,6 +1,6 @@
 import React from 'react';
-import './loginStyle.css';
 import { useNavigate } from 'react-router-dom';
+import './LoginStyle.css'
 
 interface LoginProps {
   onClose: () => void;

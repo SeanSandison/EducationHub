@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useState } from 'react';
-import Header from './components/Header_Footer/Header';
-import Footer from './components/Header_Footer/Footer';
-import SignUp from './components/SignUp_Login/Signup';
-import Login from './components/SignUp_Login/Login';
-import Dashboard from './components/Dashboard';
-import Sessions from './components/Sessions';
-import Profile from './components/Profile';
-
+import Header from './Header/Header';
+import Footer from './Footer/Footer';
+import SignUp from './SignUp/Signup';
+import Login from './Login/Login';
+import Dashboard from './Dashboard/Dashboard';
+import Sessions from './Sessions/Sessions';
+import Profile from './Profile/Profile';
+import './AppStyle.css';
 
 function App() {
   const [showSignUp, setShowSignUp] = useState(false);
@@ -40,19 +40,38 @@ function App() {
 
   return (
     <Router>
-     {(!showSignUp && !showLogin) && (
-        <Header onLoginClick={openLogin} isLoggedIn={isLoggedIn} onLogout={handleLogout} />
-      )}
+      <div className="app-root">
+        {/* Everything inside here will be blurred when a modal is open */}
+        <div className={`content-container ${showLogin || showSignUp ? 'blurred' : ''}`}>
+          <div className="header">
+            <Header onLoginClick={openLogin} isLoggedIn={isLoggedIn} onLogout={handleLogout} />
+          </div>
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<div>Home Page</div>} />
+              <Route path="/dashboard" element={isLoggedIn ? <Dashboard /> : <Navigate to="/" />} />
+              <Route path="/sessions" element={isLoggedIn ? <Sessions /> : <Navigate to="/" />} />
+              <Route path="/profile" element={isLoggedIn ? <Profile /> : <Navigate to="/" />} />
+            </Routes>
+          </main>
 
-      <Routes>
-        <Route path="/" element={<div>Home Page</div>} />
-        <Route path="/dashboard" element={isLoggedIn ? <Dashboard /> : <Navigate to="/" />} />
-        <Route path="/sessions" element={isLoggedIn ? <Sessions /> : <Navigate to="/" />} />
-        <Route path="/profile" element={isLoggedIn ? <Profile /> : <Navigate to="/" />} />
-      </Routes>
-      {showSignUp && <SignUp onClose={closeOverlay} onLogin={openLogin} />}
-      {showLogin && <Login onClose={closeOverlay} onLoginSuccess={handleLoginSuccess} onSignup={openSignUp} />}
-      {(!showSignUp && !showLogin) && <Footer />}
+          <div className="footer" >
+            <Footer />
+          </div>
+        </div>
+
+        {/* Modal outside blur zone */}
+        {showSignUp && (
+          <div className="overlay">
+            <SignUp onClose={closeOverlay} onLogin={openLogin} />
+          </div>
+        )}
+        {showLogin && (
+          <div className="overlay">
+            <Login onClose={closeOverlay} onLoginSuccess={handleLoginSuccess} onSignup={openSignUp} />
+          </div>
+        )}
+      </div>
     </Router>
   );
 }

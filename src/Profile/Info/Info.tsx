@@ -1,9 +1,10 @@
 import React from "react";
+import './InfoStyle.css'
 
 const Info: React.FC = () => {
   return (
     <div className="info-container">
-      <h2>Profile Information</h2>
+      <h1>Profile Information</h1>
       <div className="pic-username">
         <div className="pic">
           Picture

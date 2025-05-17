@@ -1,10 +1,16 @@
 import React from "react";
+import "./AdvancedStyle.css"
 
 const Advanced: React.FC = () => {
   return (
-    <div className="p-6">
-      <h1>Welcome to your Advanced Settings</h1>
-      <p>This is where your main content will appear.</p>
+    <div className="info-container">
+      <h1>Advanced Settings</h1>
+      <ul className="advanced-list">
+        <li className="advanced-container">
+              <h2>Delete Account</h2>
+              <button className="delete-button">Delete</button>
+        </li>
+      </ul>  
     </div>
   );
 }

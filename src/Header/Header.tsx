@@ -20,6 +20,7 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick, isLoggedIn, onLogout }) =
             <>
               <li><Link to="/dashboard">Dashboard</Link></li>
               <li><Link to="/sessions">Sessions</Link></li>
+              <li><Link to="/message">Message</Link></li>
               <li><Link to="/profile">Profile</Link></li>
               <li><a onClick={onLogout} href="#">Logout</a></li>
             </>

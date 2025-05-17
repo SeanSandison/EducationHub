@@ -7,6 +7,7 @@ import Login from './Login/Login';
 import Dashboard from './Dashboard/Dashboard';
 import Sessions from './Sessions/Sessions';
 import Profile from './Profile/Profile';
+import Message from './Message/Message';
 import './AppStyle.css';
 
 function App() {
@@ -40,27 +41,22 @@ function App() {
 
   return (
     <Router>
-      <div className="app-root">
-        {/* Everything inside here will be blurred when a modal is open */}
+      <div className="app-wrapper">
         <div className={`content-container ${showLogin || showSignUp ? 'blurred' : ''}`}>
-          <div className="header">
-            <Header onLoginClick={openLogin} isLoggedIn={isLoggedIn} onLogout={handleLogout} />
-          </div>
+          <Header onLoginClick={openLogin} isLoggedIn={isLoggedIn} onLogout={handleLogout} />
           <main className="main-content">
             <Routes>
               <Route path="/" element={<div>Home Page</div>} />
               <Route path="/dashboard" element={isLoggedIn ? <Dashboard /> : <Navigate to="/" />} />
               <Route path="/sessions" element={isLoggedIn ? <Sessions /> : <Navigate to="/" />} />
+              <Route path="/message" element={isLoggedIn ? <Message /> : <Navigate to="/" />} />
               <Route path="/profile" element={isLoggedIn ? <Profile /> : <Navigate to="/" />} />
             </Routes>
           </main>
-
-          <div className="footer" >
-            <Footer />
-          </div>
+          <Footer />
         </div>
 
-        {/* Modal outside blur zone */}
+        {/* Modal */}
         {showSignUp && (
           <div className="overlay">
             <SignUp onClose={closeOverlay} onLogin={openLogin} />

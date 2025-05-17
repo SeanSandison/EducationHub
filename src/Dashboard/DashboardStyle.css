@@ -8,7 +8,7 @@ main {
 }
 
 .welcome-wrapper {
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: center;
   margin-top: 3.5rem;
@@ -17,24 +17,22 @@ main {
 .session-row {
   display: flex;
   flex-direction: row;
-  justify-content: left;
+  justify-content: center;
   align-items: flex-start;
-  gap: 0rem;
-  width: 100vw;
-  margin-top: 0.5rem;
+  width: 90%;
+  gap: 4rem;
+  padding: 2rem 0;
 }
 
-.session-wrapper{
-    flex: 2 1 0;
-    display: flex;
-    justify-content: right;
-    width: 70%;
+.recSession-wrapper{
+  flex: 1 0 0;
+  display: flex;
+  justify-content: center;
 }
-.recSession-wrapper {
-    flex: 1 1 0;
-    display: flex;
-    justify-content: right;
-    width: 30%;
+.session-wrapper {
+  flex: 2 0 0;
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 900px) {

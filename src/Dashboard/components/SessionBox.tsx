@@ -10,9 +10,10 @@ type Session = {
 
 type SessionBoxProps = {
     sessions: Session[];
+    onSessionClick?: (session: Session) => void;
 };
 
-const SessionBox: React.FC<SessionBoxProps> = ({ sessions }) => {
+const SessionBox: React.FC<SessionBoxProps> = ({ sessions, onSessionClick }) => {
     return (
         <div className="session-box">
             <h2 className="session-title">Your Current Sessions</h2>
@@ -21,7 +22,13 @@ const SessionBox: React.FC<SessionBoxProps> = ({ sessions }) => {
             ) : (
                 <ul className="session-list">
                     {sessions.map(session => (
-                        <li key={session.id} className="session-item">
+                        <li
+                            key={session.id}
+                            className="session-item clickable-session-item"
+                            onClick={() => onSessionClick && onSessionClick(session)}
+                            tabIndex={0}
+                            role="button"
+                        >
                             <div className="session-item-title">{session.title}</div>
                             <div className="session-item-date">{session.date}</div>
                             <span

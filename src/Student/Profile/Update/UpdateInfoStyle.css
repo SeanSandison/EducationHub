@@ -1,0 +1,47 @@
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 12px;
+    color: rgb(73, 73, 73);
+    padding: 1rem 1rem 1rem 1rem;
+    background-color: white;
+}
+
+.update-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    justify-content: center;
+    width: 90%;
+}
+
+.update-container {
+    flex: 1 1 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #d1d1d1;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.update-button {
+    width: 80px;
+    margin-right: 5px;
+    height: 80px;
+}
+
+@media (max-width: 700px) {
+  .update-container {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}

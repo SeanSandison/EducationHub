@@ -2,7 +2,7 @@ import React from 'react';
 import WelcomeBox from './components/WelcomeBox';
 import SessionBox from './components/SessionBox';
 import RecSessionBox from './components/RecSessionBox';
-import './DashboardStyle.css';
+import './ParDashboardStyle.css';
 
 const exampleSessions: {
     id: string;

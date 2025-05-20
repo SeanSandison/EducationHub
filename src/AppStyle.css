@@ -17,6 +17,34 @@ html, body {
   position: relative;
 }
 
+.app-wrapper-student{
+  --primary-bg: #fff8e1;
+  --primary-header: #cfb39d;
+  --primary-accent: #ffe082;
+}
+
+.app-wrapper-parent{
+  --primary-bg: #e3f2fd;
+  --primary-header: #1976d2;
+  --primary-accent: #64b5f6;
+}
+
+.app-wrapper-tutor{
+  --primary-bg: #e8f5e9;
+  --primary-header: #388e3c;
+  --primary-accent: #81c784;
+}
+
+.app-wrapper-admin{
+  --primary-bg: #fbe9e7;
+  --primary-header: #d84315;
+  --primary-accent: #ffab91;
+}
+
+.app-wrapper{
+  width: 100%;
+}
+
 
 .content-container {
   width: 100%;
@@ -25,6 +53,7 @@ html, body {
   display: flex;
   flex-direction: column;
   transition: filter 0.3s ease;
+  background: var(--primary-bg, #fff8e1);
 }
 
 .main-content{

@@ -5,7 +5,7 @@ import './LoginStyle.css'
 interface LoginProps {
   onClose: () => void;
   onSignup: () => void;
-  onLoginSuccess: () => void;
+  onLoginSuccess: (type: 'student' | 'parent' | 'tutor' | 'admin') => void;
 }
 
 const Login: React.FC<LoginProps> = ({ onClose, onSignup, onLoginSuccess }) => {
@@ -14,11 +14,29 @@ const Login: React.FC<LoginProps> = ({ onClose, onSignup, onLoginSuccess }) => {
   
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log('Login submitted');
-    onLoginSuccess();
-    onClose();
-    navigate('/dashboard');
-    // handle actual login logic here
+    const formData = new FormData(event.currentTarget);
+    const username = formData.get('username');
+    const password = formData.get('password');
+
+    if (username === 'admin' && password === 'password') {
+      onLoginSuccess('admin');
+      onClose();
+      navigate('/student-dashboard');
+    } else if (username === "student" && password === "1") {
+      onLoginSuccess('student');
+      onClose();
+      navigate('/student-dashboard');
+    } else if (username === "parent" && password === "2") {
+      onLoginSuccess('parent');
+      onClose();
+      navigate('/parent-dashboard');
+    } else if (username === "tutor" && password === "3") {
+      onLoginSuccess('tutor');
+      onClose();
+      navigate('/tutor-dashboard');
+    } else {
+      alert('Invalid credentials');
+    }
   };
 
   return (

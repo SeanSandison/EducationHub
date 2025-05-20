@@ -1,6 +1,6 @@
 /* Header Styling */
 header {
-    background-color: #cfb39d;
+    background: var(--primary-header, #cfb39d);
     position: fixed;
     top: 0;
     left: 0;
@@ -51,4 +51,11 @@ li a:hover {
     font-size: 32px; /* added px */
     color: white;
     justify-content: left;
+}
+
+.header-student {
+  background-color: #cfb39d; /* Example student color */
+}
+.header-parent {
+  background-color: #4a90e2; /* Example parent color */
 }

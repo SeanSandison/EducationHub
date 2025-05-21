@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ProfileHeader from './ProfileHeader';
+import ProfileHeader from './ProProfileHeader';
 import Info from './Info/Info';
 import UpdateInfo from './Update/UpdateInfo';
 import Payment from './Payment/Payment';

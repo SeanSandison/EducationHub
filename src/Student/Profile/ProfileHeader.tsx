@@ -1,5 +1,5 @@
 import React from "react";
-import './ProfileHeaderStyle.css'
+import '../../Styles/ProfileHeaderStyle.css'
 
 interface ProfileHeaderProps {
     onInfoClick: (e: React.MouseEvent) => void;

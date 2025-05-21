@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../../Styles/MessageStyle.css';
 
 interface Message {
     id: number;

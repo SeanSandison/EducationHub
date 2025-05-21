@@ -9,16 +9,22 @@ import StuSessions from './Student/Sessions/Sessions';
 import StuProfile from './Student/Profile/Profile';
 import StuMessage from './Student/Message/Message';
 import ParDashboard from './Parent/Dashboard/ParDashboard';
+import ParFamily from './Parent/Family/Family';
 import ParSessions from './Parent/Sessions/Sessions';
 import ParProfile from './Parent/Profile/Profile';
 import ParMessage from './Parent/Message/Message';
+import ProDashboard from './Provider/Dashboard/ProDashboard';
+import ProStudents from './Provider/Students/ProStudents';
+import ProSessions from './Provider/Sessions/ProSessions';
+import ProProfile from './Provider/Profile/ProProfile';
+import ProMessage from './Provider/Message/ProMessage';
 import './AppStyle.css';
 
 function App() {
   const [showSignUp, setShowSignUp] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [loginType, setLoginType] = useState<'student' | 'parent' | 'tutor' | 'admin' | undefined>(undefined);
+  const [loginType, setLoginType] = useState<'student' | 'parent' | 'provider' | 'admin' | undefined>(undefined);
 
   const openSignUp = () => {
     setShowSignUp(true);
@@ -35,9 +41,9 @@ function App() {
     setShowLogin(false);
   };
 
-  const handleLoginSuccess = (type: 'student' | 'parent' | 'tutor' | 'admin') => {
+  const handleLoginSuccess = (loginType: 'student' | 'parent' | 'provider' | 'admin') => {
     setIsLoggedIn(true);
-    setLoginType(type);
+    setLoginType(loginType);
     closeOverlay();
   };
 
@@ -64,9 +70,15 @@ function App() {
               <Route path="/student-message" element={isLoggedIn ? <StuMessage /> : <Navigate to="/" />} />
               <Route path="/student-profile" element={isLoggedIn ? <StuProfile /> : <Navigate to="/" />} />
               <Route path="/parent-dashboard" element={isLoggedIn ? <ParDashboard /> : <Navigate to="/" />} />
+              <Route path="/parent-family" element={isLoggedIn ? <ParFamily /> : <Navigate to="/" />} />
               <Route path="/parent-sessions" element={isLoggedIn ? <ParSessions /> : <Navigate to="/" />} />
               <Route path="/parent-message" element={isLoggedIn ? <ParMessage /> : <Navigate to="/" />} />
               <Route path="/parent-profile" element={isLoggedIn ? <ParProfile /> : <Navigate to="/" />} />
+              <Route path="/provider-dashboard" element={isLoggedIn ? <ProDashboard /> : <Navigate to="/" />} />
+              <Route path="/provider-sessions" element={isLoggedIn ? <ProSessions /> : <Navigate to="/" />} />
+              <Route path="/provider-students" element={isLoggedIn ? <ProStudents /> : <Navigate to="/" />} />
+              <Route path="/provider-message" element={isLoggedIn ? <ProMessage /> : <Navigate to="/" />} />
+              <Route path="/provider-profile" element={isLoggedIn ? <ProProfile /> : <Navigate to="/" />} />
             </Routes>
           </main>
           <Footer />

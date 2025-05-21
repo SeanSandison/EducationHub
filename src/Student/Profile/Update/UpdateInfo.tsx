@@ -1,5 +1,5 @@
 import React from "react";
-import "./UpdateInfoStyle.css"
+import "../../../Styles/UpdateInfoStyle.css"
 
 const UpdateInfo: React.FC = () => {
   return (

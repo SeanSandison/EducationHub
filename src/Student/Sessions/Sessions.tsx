@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import './SessionsStyle.css';
+import '../../Styles/SessionsStyle.css';
 import SessionBox from '../Dashboard/components/SessionBox';
 
 type Session = {

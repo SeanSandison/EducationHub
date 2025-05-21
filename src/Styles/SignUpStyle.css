@@ -50,6 +50,7 @@
 
 .signup-box button:hover {
     background-color: #333;
+    transform:scale(1.03);
 }
 
 .signup-box a {

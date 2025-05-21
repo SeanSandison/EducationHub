@@ -1,5 +1,5 @@
 import React from "react";
-import "./AdvancedStyle.css"
+import "../../../Styles/AdvancedStyle.css";
 
 const Advanced: React.FC = () => {
   return (

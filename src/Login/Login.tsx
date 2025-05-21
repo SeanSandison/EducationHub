@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './LoginStyle.css'
+import '../Styles/LoginStyle.css'
 
 interface LoginProps {
   onClose: () => void;
   onSignup: () => void;
-  onLoginSuccess: (type: 'student' | 'parent' | 'tutor' | 'admin') => void;
+  onLoginSuccess: (type: 'student' | 'parent' | 'provider' | 'admin') => void;
 }
 
 const Login: React.FC<LoginProps> = ({ onClose, onSignup, onLoginSuccess }) => {
@@ -30,10 +30,10 @@ const Login: React.FC<LoginProps> = ({ onClose, onSignup, onLoginSuccess }) => {
       onLoginSuccess('parent');
       onClose();
       navigate('/parent-dashboard');
-    } else if (username === "tutor" && password === "3") {
-      onLoginSuccess('tutor');
+    } else if (username === "provider" && password === "3") {
+      onLoginSuccess('provider');
       onClose();
-      navigate('/tutor-dashboard');
+      navigate('/provider-dashboard');
     } else {
       alert('Invalid credentials');
     }

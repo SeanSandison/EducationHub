@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./PaymentStyle.css";
+import '../../../Styles/PaymentStyle.css';
 
 const Payment: React.FC = () => {
   const [cardNumber, setCardNumber] = useState("");

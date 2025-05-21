@@ -7,6 +7,7 @@
 
 /* Calendar Container */
 .react-calendar {
+  padding: 10px;
   width: 100%;
   max-width: 600px;
   min-width: 600px;
@@ -19,9 +20,11 @@
 
 /* Calendar Title */
 .calendar-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color:  var(--primary-heading-color);
+  margin-bottom: 24px;
   text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
 }
 
 /* Session Headings */

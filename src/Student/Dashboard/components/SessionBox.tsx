@@ -1,5 +1,5 @@
 import React from 'react';
-import './SessionBoxStyle.css'
+import '../../../Styles/SessionBoxStyle.css'
 
 type Session = {
     id: string;

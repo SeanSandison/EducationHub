@@ -20,25 +20,41 @@ html, body {
 .app-wrapper-student{
   --primary-bg: #fff8e1;
   --primary-header: #cfb39d;
-  --primary-accent: #ffe082;
+  --primary-accent: #e9dcb6;
+  --primary-button-hover: #e7c8b0;
+  --primary-button-delete: red;
+  --primary-button-delete-hover: darkred;
+  --primary-heading-color: #2d3748;
 }
 
 .app-wrapper-parent{
   --primary-bg: #e3f2fd;
   --primary-header: #1976d2;
   --primary-accent: #64b5f6;
+  --primary-button-hover: #1a80e6;
+  --primary-button-delete: red;
+  --primary-button-delete-hover: darkred;
+  --primary-heading-color: #2d3748;
 }
 
-.app-wrapper-tutor{
+.app-wrapper-provider{
   --primary-bg: #e8f5e9;
   --primary-header: #388e3c;
   --primary-accent: #81c784;
+  --primary-button-hover: #45aa4a;
+  --primary-button-delete: red;
+  --primary-button-delete-hover: darkred;
+  --primary-heading-color: #2d3748;
 }
 
 .app-wrapper-admin{
   --primary-bg: #fbe9e7;
   --primary-header: #d84315;
   --primary-accent: #ffab91;
+  --primary-button-hover: #e94817;
+  --primary-button-delete: red;
+  --primary-button-delete-hover: darkred;
+  --primary-heading-color: #2d3748;
 }
 
 .app-wrapper{
@@ -48,7 +64,7 @@ html, body {
 
 .content-container {
   width: 100%;
-  min-height: calc(100vh - 3.5rem);
+  height: auto;
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
@@ -57,7 +73,7 @@ html, body {
 }
 
 .main-content{
-  margin-top: 120px;
+  margin-top: 40px;
 }
 
 /* Blur applied here */

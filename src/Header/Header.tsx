@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './HeaderStyle.css';
+import '../Styles/HeaderStyle.css';
 
 interface HeaderProps {
   onLoginClick: () => void;
   isLoggedIn: boolean;
   onLogout: () => void;
-  loginType?: 'student' | 'parent' | 'tutor' | 'admin';
+  loginType?: 'student' | 'parent' | 'provider' | 'admin';
 }
 
 const Header: React.FC<HeaderProps> = ({ onLoginClick, isLoggedIn, onLogout, loginType }) => {
@@ -25,13 +25,13 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick, isLoggedIn, onLogout, log
               <li><Link to="/student-profile">Profile</Link></li>
               <li><a onClick={onLogout} href="#">Logout</a></li>
             </>
-          ) : loginType === 'tutor' ? (
+          ) : loginType === 'provider' ? (
             <>
-              <li><Link to="/tutor-dashboard">Dashboard</Link></li>
-              <li><Link to="/tutor-sessions">Sessions</Link></li>
-              <li><Link to="/tutor-analytics">Students</Link></li>
-              <li><Link to="/tutor-message">Message</Link></li>
-              <li><Link to="/tutor-profile">Profile</Link></li>
+              <li><Link to="/provider-dashboard">Dashboard</Link></li>
+              <li><Link to="/provider-sessions">Sessions</Link></li>
+              <li><Link to="/provider-students">Students</Link></li>
+              <li><Link to="/provider-message">Message</Link></li>
+              <li><Link to="/provider-profile">Profile</Link></li>
               <li><a onClick={onLogout} href="#">Logout</a></li>
             </>
           ) : loginType === 'parent' ? (

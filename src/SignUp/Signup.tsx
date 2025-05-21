@@ -1,5 +1,5 @@
 import React from 'react';
-import './SignUpStyle.css'
+import '../Styles/SignUpStyle.css';
 
 interface SignUpProps {
     onClose: () => void;

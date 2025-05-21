@@ -10,7 +10,7 @@
     background-color: white;
 }
 
-.update-list {
+.advanced-list {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
@@ -21,7 +21,7 @@
     width: 90%;
 }
 
-.update-container {
+.advanced-container {
     flex: 1 1 40%;
     display: flex;
     align-items: center;
@@ -33,15 +33,20 @@
     box-sizing: border-box;
 }
 
-.update-button {
+.delete-button {
     width: 80px;
     margin-right: 5px;
     height: 80px;
+    border: 0;
+    background: var(--primary-button-delete);
+    font-weight: bolder;
+    font-size: 16px;
+    color: white;
+    border-radius: 15px;
 }
 
-@media (max-width: 700px) {
-  .update-container {
-    flex-basis: 100%;
-    max-width: 100%;
-  }
+.delete-button:hover {
+    background: var(--primary-button-delete-hover);
+    transform:scale(1.03);
+    outline: none;
 }

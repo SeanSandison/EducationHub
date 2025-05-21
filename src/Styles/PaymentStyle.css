@@ -14,7 +14,7 @@
   width: 100%;
   max-width: 600px;
   margin: 2rem auto 0 auto;
-  background: #e7cfb3;
+  background: var(--primary-accent);
   border-radius: 12px;
   padding: 2rem 1.5rem;
   box-shadow: 0 2px 8px rgba(60, 72, 88, 0.08);
@@ -31,7 +31,7 @@
   padding: 0.75rem 2rem;
   border: none;
   border-radius: 8px;
-  background-color: #cca67a;
+  background: var(--primary-header);
   color: #fff;
   font-size: 1.1rem;
   font-weight: 600;
@@ -44,8 +44,8 @@
 .card-form .update-button:hover,
 .card-form button:focus,
 .card-form .update-button:focus {
-  background-color: #c0c5a1;
-  transform: translateY(-2px) scale(1.03);
+  background: var(--primary-button-hover);
+  transform:scale(1.03);
   outline: none;
 }
 

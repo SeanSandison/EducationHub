@@ -4,7 +4,7 @@ import Info from './Info/Info';
 import UpdateInfo from './Update/UpdateInfo';
 import Payment from './Payment/Payment';
 import Advanced from './Advanced/Advanced';
-import './ProfileStyle.css';
+import '../../Styles/ProfileStyle.css';
 
 const Profile: React.FC = () => {
   const [showInfo, setShowInfo] = useState(true);

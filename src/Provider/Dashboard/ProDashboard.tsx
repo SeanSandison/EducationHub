@@ -1,7 +1,6 @@
 import React from 'react';
 import WelcomeBox from './components/WelcomeBox';
 import SessionBox from './components/SessionBox';
-import RecSessionBox from './components/RecSessionBox';
 import '../../Styles/DashboardStyle.css';
 
 const exampleSessions: {
@@ -35,7 +34,6 @@ const Dashboard: React.FC = () => {
     <main>
       <div className='welcome-wrapper'><WelcomeBox/></div>
       <div className='session-row'>
-        <div className='recSession-wrapper'><RecSessionBox sessions={exampleSessions} /></div>
         <div className='session-wrapper'><SessionBox sessions={exampleSessions} /></div>
       </div>
     </main>

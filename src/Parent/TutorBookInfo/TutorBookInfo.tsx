@@ -9,7 +9,7 @@ const Tutor: React.FC = () => {
   const tutorName = location.state?.tutorName || 'Tutor';
 
   const handleContinue = () => {
-    navigate('/parent-book-session', {
+    navigate('/student-book-session', {
       state: { tutorId, tutorName }
     });
   };

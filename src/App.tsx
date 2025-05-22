@@ -11,6 +11,8 @@ import StuSessions from './Student/Sessions/Sessions';
 import StuProfile from './Student/Profile/Profile';
 import StuMessage from './Student/Message/Message';
 import ParDashboard from './Parent/Dashboard/ParDashboard';
+import ParTutorBookInfo from './Parent/TutorBookInfo/TutorBookInfo';
+import ParBookSession from './Parent/BookSession/BookSession';
 import ParFamily from './Parent/Family/Family';
 import ParSessions from './Parent/Sessions/Sessions';
 import ParProfile from './Parent/Profile/Profile';
@@ -70,11 +72,13 @@ function App() {
               <Route path="/" element={<div>Home Page</div>} />
               <Route path="/student-dashboard" element={isLoggedIn ? <StuDashboard /> : <Navigate to="/" />} />
               <Route path="/student-book-session" element={isLoggedIn ? <StuBookSession /> : <Navigate to="/" />} />
-              <Route path="/student-tutor-book-info" element={isLoggedIn ? <StuTutorBookInfo /> : <Navigate to="/" />} />
+              <Route path="/student-tutor-book-info/:tutorId" element={isLoggedIn ? <StuTutorBookInfo /> : <Navigate to="/" />} />
               <Route path="/student-sessions" element={isLoggedIn ? <StuSessions /> : <Navigate to="/" />} />
               <Route path="/student-message" element={isLoggedIn ? <StuMessage /> : <Navigate to="/" />} />
               <Route path="/student-profile" element={isLoggedIn ? <StuProfile /> : <Navigate to="/" />} />
               <Route path="/parent-dashboard" element={isLoggedIn ? <ParDashboard /> : <Navigate to="/" />} />
+              <Route path="/parent-tutor-book-info/:tutorId" element={isLoggedIn ? <ParTutorBookInfo /> : <Navigate to="/" />} />
+              <Route path="/parent-book-session" element={isLoggedIn ? <ParBookSession /> : <Navigate to="/" />} />
               <Route path="/parent-family" element={isLoggedIn ? <ParFamily /> : <Navigate to="/" />} />
               <Route path="/parent-sessions" element={isLoggedIn ? <ParSessions /> : <Navigate to="/" />} />
               <Route path="/parent-message" element={isLoggedIn ? <ParMessage /> : <Navigate to="/" />} />

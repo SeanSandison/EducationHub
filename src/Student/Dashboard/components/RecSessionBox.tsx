@@ -1,7 +1,6 @@
 import React from 'react';
 import '../../../Styles/RecSessionBoxStyle.css';
 
-// Update the Session type to match your data structure
 type Session = {
     id: string;
     title: string;
@@ -11,38 +10,32 @@ type Session = {
     tutorName: string;
 };
 
-type RecommendedSessionBoxProps = {
-    sessions: Session[];
-    onSessionClick: (session: Session) => void;
+type RecSessionBoxProps = {
+  sessions: Session[];
+  onSessionClick?: (session: Session) => void;
 };
 
-const RecommendedSessionBox: React.FC<RecommendedSessionBoxProps> = ({ 
-    sessions, 
-    onSessionClick 
-}) => {
-    return (
-        <div className="recommended-session-box">
-            <h2 className="recommended-session-title">Recommended Sessions</h2>
-            {sessions.length === 0 ? (
-                <div className="recommended-session-empty">No recommended sessions.</div>
-            ) : (
-                <ul className="recommended-session-list">
-                    {sessions.map(session => (
-                        <li
-                            key={session.id}
-                            className="recommended-session-item clickable-session-item"
-                            onClick={() => onSessionClick(session)}
-                            tabIndex={0}
-                            role="button"
-                        >
-                            <div className="recommended-session-item-title">{session.title}</div>
-                            <div className="recommended-session-item-date">{session.date}</div>
-                        </li>
-                    ))}
-                </ul>
-            )}
-        </div>
-    );
-};
+const RecSessionBox: React.FC<RecSessionBoxProps> = ({ sessions, onSessionClick }) => (
+  <div className="recommended-session-box">
+    <h2 className="recommended-session-title">Recommended Sessions</h2>
+    <ul className="recommended-session-list">
+      {sessions.map(session => (
+        <li
+          key={session.id}
+          className="recommended-session-item clickable-session-item"
+          onClick={() => onSessionClick && onSessionClick(session)}
+          tabIndex={0}
+          role="button"
+        >
+          <div className="recommended-session-item-title">{session.title}</div>
+          <div className="recommended-session-item-date">{session.date}</div>
+          <span className={`recommended-session-status recommended-session-status-${session.status}`}>
+            {session.status}
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
 
-export default RecommendedSessionBox;
+export default RecSessionBox;

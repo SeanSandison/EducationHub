@@ -23,7 +23,7 @@ const BookSession: React.FC = () => {
         e.preventDefault();
 
         console.log('Booking submitted:', formData);
-        navigate('/parent-dashboard');
+        navigate('/student-dashboard');
     };
 
     return (

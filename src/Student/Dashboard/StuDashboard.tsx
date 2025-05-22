@@ -46,7 +46,7 @@ const StuDashboard: React.FC = () => {
   const navigate = useNavigate();
 
   const handleSessionClick = (session: Session) => {
-    navigate(`/tutor/${session.tutorId}`, {
+    navigate(`/parent-tutor-book-info/${session.tutorId}`, {
       state: { tutorName: session.tutorName }
     });
   };

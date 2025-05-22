@@ -4,6 +4,8 @@ import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import SignUp from './SignUp/Signup';
 import Login from './Login/Login';
+import StuTutorBookInfo from './Student/TutorBookInfo/TutorBookInfo';
+import StuBookSession from './Student/BookSession/BookSession';
 import StuDashboard from './Student/Dashboard/StuDashboard';
 import StuSessions from './Student/Sessions/Sessions';
 import StuProfile from './Student/Profile/Profile';
@@ -16,6 +18,7 @@ import ParMessage from './Parent/Message/Message';
 import ProDashboard from './Provider/Dashboard/ProDashboard';
 import ProStudents from './Provider/Students/ProStudents';
 import ProSessions from './Provider/Sessions/ProSessions';
+import ProAnalytics from './Provider/Analytics/ProAnalytics';
 import ProProfile from './Provider/Profile/ProProfile';
 import ProMessage from './Provider/Message/ProMessage';
 import './AppStyle.css';
@@ -66,6 +69,8 @@ function App() {
             <Routes>
               <Route path="/" element={<div>Home Page</div>} />
               <Route path="/student-dashboard" element={isLoggedIn ? <StuDashboard /> : <Navigate to="/" />} />
+              <Route path="/student-book-session" element={isLoggedIn ? <StuBookSession /> : <Navigate to="/" />} />
+              <Route path="/student-tutor-book-info" element={isLoggedIn ? <StuTutorBookInfo /> : <Navigate to="/" />} />
               <Route path="/student-sessions" element={isLoggedIn ? <StuSessions /> : <Navigate to="/" />} />
               <Route path="/student-message" element={isLoggedIn ? <StuMessage /> : <Navigate to="/" />} />
               <Route path="/student-profile" element={isLoggedIn ? <StuProfile /> : <Navigate to="/" />} />
@@ -76,6 +81,7 @@ function App() {
               <Route path="/parent-profile" element={isLoggedIn ? <ParProfile /> : <Navigate to="/" />} />
               <Route path="/provider-dashboard" element={isLoggedIn ? <ProDashboard /> : <Navigate to="/" />} />
               <Route path="/provider-sessions" element={isLoggedIn ? <ProSessions /> : <Navigate to="/" />} />
+              <Route path="/provider-analytics" element={isLoggedIn ? <ProAnalytics /> : <Navigate to="/" />} />
               <Route path="/provider-students" element={isLoggedIn ? <ProStudents /> : <Navigate to="/" />} />
               <Route path="/provider-message" element={isLoggedIn ? <ProMessage /> : <Navigate to="/" />} />
               <Route path="/provider-profile" element={isLoggedIn ? <ProProfile /> : <Navigate to="/" />} />

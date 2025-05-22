@@ -29,6 +29,7 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick, isLoggedIn, onLogout, log
             <>
               <li><Link to="/provider-dashboard">Dashboard</Link></li>
               <li><Link to="/provider-sessions">Sessions</Link></li>
+              <li><Link to="/provider-analytics">Analytics</Link></li>
               <li><Link to="/provider-students">Students</Link></li>
               <li><Link to="/provider-message">Message</Link></li>
               <li><Link to="/provider-profile">Profile</Link></li>

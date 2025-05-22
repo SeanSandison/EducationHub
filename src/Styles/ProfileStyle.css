@@ -36,6 +36,11 @@ main {
     border-radius: 12px;
 }
 
+.profile-family{
+    width: 100%;
+    border-radius: 12px;
+}
+
 .profile-header {
     background: var(--primary-accent);
     height: min-content;

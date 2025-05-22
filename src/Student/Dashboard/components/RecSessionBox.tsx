@@ -1,19 +1,25 @@
 import React from 'react';
 import '../../../Styles/RecSessionBoxStyle.css';
 
+// Update the Session type to match your data structure
 type Session = {
     id: string;
     title: string;
     date: string;
     status: 'active' | 'completed' | 'upcoming';
+    tutorId: string;
+    tutorName: string;
 };
 
 type RecommendedSessionBoxProps = {
     sessions: Session[];
-    onSessionClick?: (session: Session) => void;
+    onSessionClick: (session: Session) => void;
 };
 
-const RecommendedSessionBox: React.FC<RecommendedSessionBoxProps> = ({ sessions, onSessionClick }) => {
+const RecommendedSessionBox: React.FC<RecommendedSessionBoxProps> = ({ 
+    sessions, 
+    onSessionClick 
+}) => {
     return (
         <div className="recommended-session-box">
             <h2 className="recommended-session-title">Recommended Sessions</h2>
@@ -25,7 +31,7 @@ const RecommendedSessionBox: React.FC<RecommendedSessionBoxProps> = ({ sessions,
                         <li
                             key={session.id}
                             className="recommended-session-item clickable-session-item"
-                            onClick={() => onSessionClick && onSessionClick(session)}
+                            onClick={() => onSessionClick(session)}
                             tabIndex={0}
                             role="button"
                         >

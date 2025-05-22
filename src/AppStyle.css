@@ -30,6 +30,7 @@ html, body {
 .app-wrapper-parent{
   --primary-bg: #e3f2fd;
   --primary-header: #1976d2;
+  --primary-student: #d2e9fc;
   --primary-accent: #64b5f6;
   --primary-button-hover: #1a80e6;
   --primary-button-delete: red;
@@ -40,6 +41,7 @@ html, body {
 .app-wrapper-provider{
   --primary-bg: #e8f5e9;
   --primary-header: #388e3c;
+  --primary-student: #bfdbc1;
   --primary-accent: #81c784;
   --primary-button-hover: #45aa4a;
   --primary-button-delete: red;
@@ -63,6 +65,7 @@ html, body {
 
 
 .content-container {
+  margin-top: 40px;
   width: 100%;
   height: auto;
   flex: 1 0 auto;
@@ -73,7 +76,7 @@ html, body {
 }
 
 .main-content{
-  margin-top: 40px;
+  margin-top: 0px;
 }
 
 /* Blur applied here */

@@ -6,9 +6,10 @@ interface ProfileHeaderProps {
     onUpdateInfoClick: (e: React.MouseEvent) => void;
     onPaymentClick: (e: React.MouseEvent) => void;
     onAdvancedClick: (e: React.MouseEvent) => void;
+    onFamilyClick: (e: React.MouseEvent) => void;
 }
 
-const ProfileHeader: React.FC<ProfileHeaderProps> = ({onInfoClick,onUpdateInfoClick,onPaymentClick,onAdvancedClick,}) => {
+const ProfileHeader: React.FC<ProfileHeaderProps> = ({onInfoClick,onUpdateInfoClick,onPaymentClick,onAdvancedClick,onFamilyClick}) => {
   return (
     <div>
       <ul>
@@ -18,8 +19,12 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({onInfoClick,onUpdateInfoCl
         <li>
           <a href="/profile/update" onClick={onUpdateInfoClick}>Update Info</a>
         </li>
+
         <li>
           <a href="/profile/payment" onClick={onPaymentClick}>Payment</a>
+        </li>
+        <li>
+          <a href="/profile/family" onClick={onFamilyClick}>Family</a>
         </li>
         <li>
           <a href="/profile/advanced" onClick={onAdvancedClick}>Advanced Settings</a>

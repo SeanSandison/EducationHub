@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../Styles/ProStudentsStyle.css';
+import '../../Styles/MembersStyle.css';
 
 interface Student {
     id: number;
@@ -7,10 +7,12 @@ interface Student {
     email: string;
 }
 
+/* studnet information here */
 const students: Student[] = [
     { id: 1, name: 'Alice Johnson', email: 'alice@example.com' },
     { id: 2, name: 'Bob Smith', email: 'bob@example.com' },
     { id: 3, name: 'Charlie Brown', email: 'charlie@example.com' },
+
 ];
 
 const StudentOverlay: React.FC<{ student: Student; onClose: () => void }> = ({ student, onClose }) => (
@@ -28,14 +30,14 @@ const Students: React.FC = () => {
     const [selectedStudent, setSelectedStudent] = useState<Student | null>(null);
 
     return (
-        <div className="students-container">
-            <div className={`students-content ${selectedStudent ? 'blurred' : ''}`}>
-                <h2 className="students-title">Students</h2>
-                <ul className="students-list">
+        <div className="members-container">
+            <div className={`members-content ${selectedStudent ? 'blurred' : ''}`}>
+                <h2 className="members-title">Students</h2>
+                <ul className="members-list">
                     {students.map(student => (
                         <li
                             key={student.id}
-                            className="students-member"
+                            className="members-member"
                             onClick={() => setSelectedStudent(student)}
                         >
                             <div className="member-avatar">{student.name.charAt(0)}</div>
@@ -46,7 +48,6 @@ const Students: React.FC = () => {
                         </li>
                     ))}
                 </ul>
-                <button className="add-member-btn">Add Student</button>
             </div>
 
             {selectedStudent && (

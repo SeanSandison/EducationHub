@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../Styles/FamilyStyle.css';
+import '../../Styles/MembersStyle.css';
 
 interface Student {
     id: number;
@@ -30,12 +30,12 @@ const Family: React.FC = () => {
     const [selectedStudent, setSelectedStudent] = useState<Student | null>(null);
 
     return (
-        <div className="family-container">
-            <div className={`family-content ${selectedStudent ? 'blurred' : ''}`}>
-                <h2 className="family-title">Student Accounts</h2>
-                <ul className="family-list">
+        <div className="members-container">
+            <div className={`members-content ${selectedStudent ? 'blurred' : ''}`}>
+                <h2 className="members-title">Family Members</h2>
+                <ul className="members-list">
                     {students.map(student => (
-                        <li key={student.id} className="family-member" onClick={() => setSelectedStudent(student)}>
+                        <li key={student.id} className="members-member" onClick={() => setSelectedStudent(student)}>
                             <div className="member-avatar">{student.name.charAt(0)}</div>
                             <div className="member-info">
                                 <div className="member-name">{student.name}</div>
@@ -44,7 +44,6 @@ const Family: React.FC = () => {
                         </li>
                     ))}
                 </ul>
-                <button className="add-member-btn">Add Student</button>
             </div>
 
             {selectedStudent && (
